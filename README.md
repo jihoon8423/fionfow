@@ -13,5 +13,5 @@
 
 | 강지훈 | 정성록 | 홍비당 | 김유환 |
 |:----------------------------------------------:|:----------------------------------------------------:|:------------------------------------:|:----------------------------------------:|
-| <img src="" width="100" /> | <img src="https://user-images.githubusercontent.com/131742208/236714509-277f8a15-5e70-49bd-a9a9-d9eb4ec7a530.png" width="100" /> | <img src="https://user-images.githubusercontent.com/131742208/236713825-46ad0903-d3db-4162-b0cd-6b8b5096b572.png" width="100" />| <img src="" width="100"/> |
-| [@mandoo1229(Andrew)](https://github.com/mandoo1229) | [@Mogdoh](https://github.com/Mogdoh) | [@Beeedang](https://github.com/Beeedang) | [@HeeJu23(Judy)](https://github.com/HeeJu23) |
+| <img src="https://user-images.githubusercontent.com/131742208/236715131-943a72e6-bb16-4d93-b773-e54748be02ea.png" width="100" /> | <img src="https://user-images.githubusercontent.com/131742208/236714509-277f8a15-5e70-49bd-a9a9-d9eb4ec7a530.png" width="100" /> | <img src="https://user-images.githubusercontent.com/131742208/236713825-46ad0903-d3db-4162-b0cd-6b8b5096b572.png" width="100" />| <img src="" width="100"/> |
+| [@jihoon8423](https://github.com/jihoon8423) | [@Mogdoh](https://github.com/Mogdoh) | [@Beeedang](https://github.com/Beeedang) | [@kim99u](https://github.com/kim99u) |
