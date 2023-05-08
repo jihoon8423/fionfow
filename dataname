@@ -1,0 +1,61 @@
+<h1>data name</h1>
+id	선수고유id
+name	선수명
+class	선수시즌
+pay	급여
+ovr	능력치
+position	포지션
+age	나이
+height	키
+weight	몸무게
+bodytype	
+skill	
+leftfoot	
+rightfoot	
+reputation	
+nation	
+o_pac	
+o_sho	
+o_pas	
+o_dri	
+o_def	
+o_phy	
+sprint	
+accel	
+finish	
+shotpower	
+longshot	
+positioning	
+volley	
+penalty	
+shortpass	
+vision	
+cross	
+longpass	
+freekick	
+curve	
+dribble	
+control	
+agility	
+balance	
+reaction	
+marking	
+tackle	
+intercept	
+header	
+sliding	
+strength	
+stamina	
+aggression	
+jump	
+composure	
+gk_diving	
+gk_handle	
+gk_kick	
+gk_reflex	
+gk_positioning	
+mugshot	선수사진
+background	시즌배경
+smallclass	네모시즌
+bigclass	동글시즌
+nationpng	국가사진
