@@ -1,0 +1,62 @@
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: azure;
+  }
+.nation-click{ 
+  background-color: azure;
+  margin-top: 0px;
+  }
+.position-click-bar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: azure;
+  align-items: center;
+  height: 26px;
+  }
+.position-click {
+  height: 26px;
+  align-items: center;
+}
+thead th{
+  vertical-align: middle;
+  white-space: nowrap;
+  }
+tbody tr {
+  vertical-align: middle;
+}
+.Statics {
+  display : block;
+  width: 1100px;
+  text-align : center;
+  margin : 0 auto;
+  }
+.statics-mugshot {
+  max-width: 70px;
+  margin-right: 10px;
+  margin-left: 10px;
+  align-self: flex-start;
+  }
+.player-name{
+  display: flex;
+  align-items: center;
+  margin-bottom: -0.5px;
+  }
+.position-FW {
+  color: rgb(186, 38, 38);
+  }
+.position-MF {
+  color: rgb(30, 187, 30);
+  }
+.position-DF {
+  color: rgb(51, 121, 197);
+  }
+.position-GK {
+  color: rgb(207, 207, 40);
+  }
+.static-player-tr:hover {
+  background-color: lightgray;
+}
+  
+

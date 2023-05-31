@@ -1,0 +1,27 @@
+.foot-container {
+    display: flex;
+    align-items: center;
+    background-color: rgb(101, 209, 142)
+    }
+.ad-container {
+    margin-left: 354px;
+    display: flex;
+    align-items: center;
+    }
+.ad1 {
+    width: 400px;
+    height: 150px;
+    }
+.ad2 {
+    width: 400px;
+    height: 150px;
+    }
+.company {
+    display: inline-block;
+}
+a {
+    font-size: 16px;
+}
+address {
+    font-size: 12px;
+}
