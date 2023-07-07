@@ -7,6 +7,7 @@ import SearchBar from "./SearchBar";
 import data from "../../data/data.json";
 import { selectPlayer } from "../action/Action.js";
 import "./Home.css";
+
 //import ad1 from "../../images/ad1.gif";
 //import ad2 from "../../images/ad2.gif";
 

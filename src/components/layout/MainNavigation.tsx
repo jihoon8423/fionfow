@@ -33,8 +33,6 @@ const MainNavigation = () => {
   }
 
   return (
-    <header>
-      <Link to='/'><div>Home</div></Link>
       <nav>
         <ul>
           <li>{!isLogin && <Link to='/login'>Login</Link>}</li>
@@ -43,7 +41,6 @@ const MainNavigation = () => {
           <li>{isLogin && <button onClick={toggleLogoutHandler}>Logout</button>}</li>
         </ul>
       </nav>
-    </header>
   );
 };
 

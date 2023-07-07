@@ -39,11 +39,11 @@ const ChangePassword = () => {
     <form onSubmit={submitHandler}>
       <div>
         <label htmlFor="ex-password">Old Password</label>
-        <input type="password" id="ex-password" minLength={8} ref={exPasswordInputRef} />
+        <input type="password" id="ex-password"  ref={exPasswordInputRef} />
         <label htmlFor="new-password">New Password</label>
-        <input type="password" id="new-password" minLength={8} ref={newPasswordInputRef} />
+        <input type="password" id="new-password"  ref={newPasswordInputRef} />
         <label htmlFor="new-password-again">New Password Again</label>
-        <input type="password" id="new-password-again" minLength={8} ref={newPasswordAgainInputRef} />
+        <input type="password" id="new-password-again" ref={newPasswordAgainInputRef} />
       </div>
       <div>
         <button type="submit">Change Password</button>

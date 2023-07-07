@@ -16,17 +16,20 @@ type Props = {item:string | undefined}
 
 type ArticleInfo = {
     articleId: number,
-    memberNickName: string,
+    memberNickname: string,
     articleTitle: string,
     articleBody?: string,
-    createAt: string,
-    updateAt?: string,
+    createdAt: string,
+    updatedAt?: string,
     isWritten?: boolean
 };
 
 const ArticleList:React.FC<Props> = (props) => {
     let navigate = useNavigate();
-    const pageId = String(props.item);
+    // const pageId = String(props.item);
+
+    const { item: pageId = "1" } = props;
+
     
     const columns = [{
         dataField: 'articleId',
@@ -42,23 +45,23 @@ const ArticleList:React.FC<Props> = (props) => {
             return{ width: "65%"};
         },
         events: {
-            onclick: (e:any, column:any, columnIndex:any, row:any, rowIndex:any) => {
+            onClick: (e:any, column:any, columnIndex:any, row:any, rowIndex:any) => {
                 const articleIdNum:string = row.articleId;
-                navigate('../article/${articleIdNum}');
+                navigate(`../article/${articleIdNum}`);
             }
         }
     }, {
-        dataField: 'memberNickName',
+        dataField: 'memberNickname',
         text: '닉네임'
     }, {
-        dataField: 'createAt',
+        dataField: 'createdAt',
         text: '작성일'
     }]
 
     const authCtx = useContext(AuthContext);
-    const articleCtx = useContext(ArticleContext);
+    const articleCtx = useContext(ArticleContext)
 
-    const[alist, setAlist] = useState<ArticleInfo[]>([]);
+    const[aList, setAList] = useState<ArticleInfo[]>([]);
     const [maxNum, setMaxNum] = useState<number>(1);
 
     // useEffect 훅을 통해 사이트가 실행되면 fetchListHandler 함수를 실행한다
@@ -71,13 +74,16 @@ const ArticleList:React.FC<Props> = (props) => {
         articleCtx.getPageList(pageId);
     }, []);
 
+    //fetchListHandler -> pageId
     useEffect(() => {
         fetchListHandler();
-    }, [fetchListHandler]);
+    }, [fetchListHandler, pageId]);
+
 
     useEffect(() => {
         if (articleCtx.isSuccess) {
-            console.log(alist);
+            setAList(articleCtx.page);
+            console.log(articleCtx);
             setMaxNum(articleCtx.totalPages);
         }
     }, [articleCtx])
@@ -86,12 +92,12 @@ const ArticleList:React.FC<Props> = (props) => {
     // 맨 밑의 paging 객체에 현재 페이지 값인 pageId와 전체 페이지 값인 maxNum을 넘기게 된다
     return (
         <div>
-            <BootStrapTable keyField='id' data = { alist } columns={ columns } />
-            <div>{isLogin &&
+            <BootStrapTable keyField='id' data = { aList } columns={ columns } />
+            <div>{isLogin &&(
                 <Link to="/create">
                     <Button>글 작성</Button>
                 </Link>
-        }
+        )}
             </div>
             <Paging currentPage={Number(pageId)} maxPage={maxNum}/>
         </div>

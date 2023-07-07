@@ -11,13 +11,10 @@ const nicknameInputRef = useRef<HTMLInputElement>(null);
 
 const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
-
     const enteredEmail = emailInputRef.current!.value;
     const enteredPassword = passwordInputRef.current!.value;
     const enteredNickname = nicknameInputRef.current!.value;
-
     authCtx.signup(enteredEmail, enteredPassword, enteredNickname);
-
     if (authCtx.isSuccess) {
     return navigate('/', { replace: true });
     }

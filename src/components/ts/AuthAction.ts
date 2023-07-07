@@ -44,7 +44,6 @@ return {
 export const signupActionHandler = (email: string, password: string, nickname: string) => {
 const URL = '/auth/signup'
 const signupObject = { email, password, nickname };
-
 const response = POST(URL, signupObject, {});
 return response;
 };
@@ -71,7 +70,8 @@ return response;
 export const changeNicknameActionHandler = ( nickname:string, token: string) => {
 const URL = '/member/nickname';
 const changeNicknameObj = { nickname };
-const response = POST(URL, changeNicknameObj, createTokenHeader(token));
+const response = POST(URL, changeNicknameObj, createTokenHeader(token))
+console.log(changeNicknameObj);
 
 return response;
 }

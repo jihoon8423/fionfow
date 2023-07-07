@@ -14,16 +14,12 @@ const ChangeUsername = () => {
     event.preventDefault();
     const enteredNickname = nicknameInputRef.current!.value;
     console.log('change nickname start!');
-    try {
       await authCtx.changeNickname(enteredNickname);
       if (authCtx.isSuccess) {
         alert('변경 되었습니다.');
         await authCtx.getUser();
         navigate('/', { replace: true });
       }
-    } catch (error) {
-      // Handle error state or display error message
-    }
   };
 
   return (

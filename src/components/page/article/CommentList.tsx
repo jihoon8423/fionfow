@@ -47,7 +47,7 @@ const CommentList:React.FC<Props> = (props) => {
     const getContext = useCallback(() => {
         setIsLoading(false);
         (isLogin? CommentCtx.getComments(articleId, authCtx.token) : CommentCtx.getComments(articleId));
-        console.log("get comment");
+        console.log("get comment")
     }, [isLogin]);
 
     useEffect(() => {

@@ -6,7 +6,6 @@ import Statics from './components/statics/Statics';
 import Footer from './components/Footer';
 import Player from './components/page/playerpage/PlayerPage.jsx';
 import Trade from './components/trade/Tradepage.jsx';
-import Layout from './components/layout/Layout';
 import AuthPage from './components/page/login-register/AuthPage';
 import ProfilePage from './components/page/login-register/ProfilePage';
 import AuthContext from './components/store/AuthContext';
@@ -23,7 +22,6 @@ function App() {
 
   return (
     <div className="App">
-      <Layout>
         <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -39,7 +37,6 @@ function App() {
             <Route path="/article/:articleId" element={<ArticleOnePage />} />
           </Routes>
         <Footer />
-      </Layout>
     </div>
   );
 }

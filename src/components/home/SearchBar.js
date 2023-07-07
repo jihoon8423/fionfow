@@ -1,7 +1,6 @@
 // SearchBar.js
 import React, { useState } from "react";
 import "./Home.css";
-import { FaSearch } from 'react-icons/fa';
 
 
 const SearchBar = ({ data, setSearchResult }) => {
@@ -66,7 +65,7 @@ const SearchBar = ({ data, setSearchResult }) => {
           value={searchTerm}
           onChange={handleSearchTermChange}
         />
-        <button type="submit"><FaSearch /></button>
+        <button type="submit">search</button>
         {showAutocomplete && autocomplete.length > 0 && (
           <ul className="autocomplete">
             {autocomplete.map((term, index) => (

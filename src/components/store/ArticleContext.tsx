@@ -5,13 +5,13 @@ type Props = { children?: React.ReactNode }
 
 //context와 더불어 다른 컴포넌트에서도 많이 쓰게되는 type
 type ArticleInfo = {
-articleId: number,
-memberNickname: string,
-articleTitle: string,
-articleBody: string,
-cratedAt: string,
-updatedAt?: string,
-isWritten?: boolean
+    articleId: number,
+    memberNickname: string,
+    articleTitle: string,
+    articleBody?: string,
+    createdAt: string,
+    updatedAt?: string,
+    isWritten?: boolean
 };
 
 // 게시물 수정이나 삭제를 위해 받는 interface
@@ -66,28 +66,26 @@ const [isGetUpdateSuccess, setIsGetUpdateSuccess] = useState<boolean>(false);
 const getPageHandler = async (pageId: string) => {
     setIsSuccess(false);
     const data = await articleAction.getPageList(pageId);
-    const page:ArticleInfo[] = data?.data.content; 
+    const page:ArticleInfo[] = data?.data.content
     const pages:number = data?.data.totalPages;
     setPage(page);
     setTotalPages(pages);
     setIsSuccess(true);
 }
-
 // 토큰값에 따라 action함수에 넣는 값이 달라진다
 // 게시물 한개를 얻는 함수 
-const getArticleHandler = (param:string, token?:string) => {
+const getArticleHandler = (param: string, token?: string) => {
     setIsSuccess(false);
-    const data = (token ? 
-    articleAction.getOneArticle(param, token)
-    : articleAction.getOneArticle(param))
+    const data = token ? articleAction.getOneArticle(param, token) : articleAction.getOneArticle(param);
     data.then((result) => {
     if (result !== null) {
-        const article:ArticleInfo = result.data;
+        const article: ArticleInfo = result.data;
         setArticle(article);
     }
-    })
-    setIsSuccess(true);
-}
+      setIsSuccess(true); // Move this line inside the .then() block
+    });
+};
+
 
 // 게시물 생성 함수 토큰값과 postArticle 타입의 객체를 매개변수로 받는다
 const createArticleHandler = (article:PostArticle, token:string) => {
@@ -148,7 +146,7 @@ const contextValue:Ctx = {
     createArticle: createArticleHandler,
     getUpdateArticle: getUpdateArticleHandler,
     updateArticle: updateArticleHandler,
-    deleteArticle: deleteArticleHandler
+    deleteArticle: deleteArticleHandler,
 }
 
 return (

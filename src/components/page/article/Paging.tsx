@@ -26,8 +26,6 @@ const Paging:React.FC<Props> = (props) => {
         navigate(`../page/${pageNumb}`);
         }
     };
-
-
     /**
      * @Props의 주어진 값을 토대로 if를 통해, @Pagination을 만드는 함수
      * Pagination 컴포넌트를 넣은 JSX.Eliment 리스트를 만들고, 이후 @maxNum과 
