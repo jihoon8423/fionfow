@@ -6,8 +6,9 @@ import OveralAbility from "./OveralAbility"
 import Plpng from '../../../images/22pla.png';
 import Level from './LevelDropdown';
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 import DetailInfo from './DetailInfo';
+import ArticleListPage from '../ArticleListPage';
 
 
 function PlayerPage() {
@@ -49,7 +50,8 @@ const [defaultUserId, setDefaultUserId] = useState(selectedPlayer.id);
   const plusAbility = () => {
     const level = parseInt(selectedLevel);
 
-   
+
+
     if (level === 2) {
         return 1;
     } else if (level === 3) {
@@ -72,7 +74,6 @@ const [defaultUserId, setDefaultUserId] = useState(selectedPlayer.id);
         return 0;
     }
     };
-
   const abilityIncrease = plusAbility();
 
   const getValueColorClass = (value) => {
@@ -112,6 +113,8 @@ const getPlayerLevel = (val) => {
     return 'gold';
   }
 };
+
+const pageId = "1";
 
   return (
     <div>
@@ -156,7 +159,7 @@ const getPlayerLevel = (val) => {
                 <Level onSelect={onLevelChange}></Level>
               </div>
             </div>
-         </div>
+        </div>
       </div>
       <div className='page-middle-container'>
         <div className='page-season-container'>
@@ -184,7 +187,9 @@ const getPlayerLevel = (val) => {
           <DetailInfo selectedLevel={selectedLevel} selectedAbility={selectedAbility}/>
             </div>
         </div>
+        <ArticleListPage />
       </div>
+      
   );
 }
 export default PlayerPage;

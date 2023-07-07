@@ -12,7 +12,7 @@ type ArticleInfo = {
     memberNickname: string,
     articleTitle: string,
     articleBody?: string,
-    cratedAt: string,
+    createdAt: string,
     updatedAt?: string,
     written?: boolean
 };
@@ -51,7 +51,6 @@ const ArticleOne:React.FC<Props> = (props) => {
         if (articleCtx.isSuccess) {
         setArticle(articleCtx.article);
         console.log(article);
-        console.log(article?.cratedAt);
         setIsLoading(true);
         }
     }, [articleCtx, article]);
