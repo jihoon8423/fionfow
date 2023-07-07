@@ -9,7 +9,8 @@ type ArticleInfo = {
     articleBody?: string,
     createdAt: string,
     updatedAt?: string,
-    written?: boolean
+    written?: boolean,
+    // playerId: string
 };
 
 /**

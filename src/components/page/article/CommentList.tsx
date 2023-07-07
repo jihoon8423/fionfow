@@ -15,7 +15,7 @@ type CommentInfo = {
     commentId: number,
     memberNickname: string,
     commentBody: string,
-    createAt: Date,
+    createdAt: Date,
     written: boolean,
     onDelete?: (id:string) => void;
 }
@@ -48,11 +48,19 @@ const CommentList:React.FC<Props> = (props) => {
         setIsLoading(false);
         (isLogin? CommentCtx.getComments(articleId, authCtx.token) : CommentCtx.getComments(articleId));
         console.log("get comment")
+        console.log(CommentCtx)
     }, [isLogin]);
 
     useEffect(() => {
         getContext();
     }, [getContext]);
+
+    useEffect(() => {
+        if(isSuccess){
+            setComments(CommentCtx.commentList);
+            setIsLoading(true)
+        }
+    }, [isSuccess]);
 
     // 댓글 생성과 삭제로직
     // 생성은 useRef 훅을 통해 얻어온 본문과, 해당 CommentList에서 받은 Props에 있는 게시물 id값을 추출
@@ -88,7 +96,7 @@ const CommentList:React.FC<Props> = (props) => {
                         commentId = {comment.commentId}
                         memberNickname = {comment.memberNickname}
                         commentBody = {comment.commentBody}
-                        createdAt = {comment.createAt.toString()}
+                        createdAt = {comment.createdAt.toString()}
                         written = {comment.written}
                         onDelete = {deleteComment}
                         />}

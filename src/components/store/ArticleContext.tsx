@@ -11,7 +11,8 @@ type ArticleInfo = {
     articleBody?: string,
     createdAt: string,
     updatedAt?: string,
-    isWritten?: boolean
+    isWritten?: boolean,
+    // playerId: string
 };
 
 // 게시물 수정이나 삭제를 위해 받는 interface
