@@ -38,10 +38,13 @@ tbody tr {
   margin-left: 10px;
   align-self: flex-start;
   }
-.player-name{
+.player-name {
   display: flex;
   align-items: center;
   margin-bottom: -0.5px;
+  }
+.player-name span {
+  margin-right: 10px;
   }
 .position-FW {
   color: rgb(186, 38, 38);

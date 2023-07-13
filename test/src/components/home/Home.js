@@ -6,9 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import SearchBar from "./SearchBar";
 import data from "../../data/data.json";
 import { selectPlayer } from "../action/Action.js";
+import "./Home.css";
 //import ad1 from "../../images/ad1.gif";
 //import ad2 from "../../images/ad2.gif";
-import "./Home.css";
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -19,14 +20,15 @@ const Home = () => {
     dispatch(selectPlayer(id));
     navigate(`/players/${id}/${name}`);
   }
+
   return (
     <div style={{ backgroundColor: 'green', height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <div id="header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+      <div className="home-header">
         <div id="logo" style={{ width: '300px', height: '100px', backgroundImage: `url(${FionFow})`, backgroundSize: 'cover', marginRight: '40px' }}>
         </div>
       </div>
-      <div className="home-container" style={{ overflowY: 'scroll', height: '100%', backgroundColor: 'green'}}>
-        
+      <div className="home-container">
+
         <SearchBar data={data} setSearchResult={setSearchResults} handleSelectPlayer={handleSelectPlayer}/>
         {searchResults.map((player) => (
           <div key={player.id} onClick={() => handleSelectPlayer(player.id, player.name)}>

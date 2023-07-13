@@ -1,13 +1,14 @@
-import data from '../../data/data.json';
+import data from '../../../data/data.json';
 import {  useDispatch, useSelector  } from 'react-redux';
-import {selectPlayer} from '../action/Action';
+import {selectPlayer} from '../../action/Action';
 import "./PlayerPage.css"
 import OveralAbility from "./OveralAbility"
-import Plpng from '../../images/22pla.png';
+import Plpng from '../../../images/22pla.png';
 import Level from './LevelDropdown';
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import DetailInfo from './DetailInfo';
+import ArticleList from '../article/ArticleList';
 
 
 function PlayerPage() {
@@ -183,6 +184,7 @@ const getPlayerLevel = (val) => {
           <DetailInfo selectedLevel={selectedLevel} selectedAbility={selectedAbility}/>
             </div>
         </div>
+            <ArticleList / >
       </div>
   );
 }

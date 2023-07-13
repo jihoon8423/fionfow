@@ -1,4 +1,4 @@
-import data from '../../data/data.json';
+import data from '../../../data/data.json';
 import { useSelector } from 'react-redux';
 import "./PlayerPage.css"
 
