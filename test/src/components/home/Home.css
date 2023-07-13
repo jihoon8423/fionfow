@@ -1,24 +1,33 @@
-.home-container {
+    html {
+        background-color: rgb(15 133 15);
+        }
+.home-header {       /* 홈 fionfow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    }        
+.home-container {    /*검색 창 포함 홈 컨테이너*/
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: rem;
-    }
-html {
-    background-color: rgb(15 133 15);
+    margin-top: 11px;
+    background-color: green;
+    height: 100%;
     }
 .autocomplete {
     list-style: none;
     padding: 0;
-    margin-left: 2px;
-    width: 460px;
-    max-height: 20rem;
+    margin-left: 4px;
+    width: 690px;
+    max-height: 320px;  /*1rem = 16px , px로 통일함*/
     overflow: auto;
     border: 1px solid #ccc;
     background-color: #fff;
     }
 .autocomplete li {
-    padding: 0.5rem;
+    padding: 8px;
     cursor: pointer;
     }
 .autocomplete li:hover {
@@ -26,7 +35,7 @@ html {
     }
     button {
         font-size: 18px;
-        border-radius: 0.5rem;
+        border-radius: 8px;
         background-color: greenyellow;
         }
     ul {
@@ -43,7 +52,7 @@ html {
         flex-direction: row; /*기본값*/
         }
     nav ul li{
-        padding: 18px 35px;
+        padding: 17px 34px;
         box-sizing: border-box;
         }
     nav ul :hover{
@@ -60,20 +69,21 @@ html {
         top: -2px;
         z-index: 3;
         }
-    input[type="text"] {
-        width: 30rem;
-        height: 2rem;
-        font-size: 1rem;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        margin-right: -1.5rem;
+    /*input[type="text"]*/
+    .name-input {
+        width: 700px;
+        height: 32px;
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 8px;
+        margin-right: -8px;
         outline: none;
         }
   .header-container {
       display: flex;
       flex-direction: column;
       align-content: center;
-      margin-top: 15rem;
+      margin-top: 240px;
       }
   header div img {
       margin-top: 7px;
@@ -107,7 +117,7 @@ html {
       top: 35px;
       }
   .player-team {
-      margin-left: 0px;
+      margin-left: 1px;
       margin-top: 32px;
       width: 27px;
       height: 27px;
@@ -213,4 +223,89 @@ html {
   .player-card-container:hover {
     background-color: lightgray;
   }
-  
+
+  .option-class-image {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;     /*낮은 숫자가 높은 숫자 위에 표시*/
+    background-color: green;
+  }
+  .option-values {
+    display: flex;
+    flex-wrap: wrap; /* 요소가 너비를 벗어나면 줄 바꿈 */
+    position: absolute; /* 자식 요소에 absolute 위치 설정 */
+    margin-top: 0px; /* 원하는 위치로 조정 */
+    left: 0;
+    background-color: green;
+  }
+  .option-values img {
+    width: 20px;
+    height: 15px;
+  }
+  .class-image {
+    margin-right: 5px;
+    margin-bottom: 5px; /* 아래 여백 추가하여 줄 바꿈 */
+    opacity: 0.5; /* 선택되지 않은 옵션의 투명도 */
+    cursor: pointer;
+  }
+  .class-image.selected {
+    opacity: 1; /* 선택된 옵션의 투명도 */
+  }
+  .option-label {
+    margin-right: 5px;
+  }
+  .autocomplete-na {
+    list-style: none;
+    padding: 0;
+    margin-left: 42px;
+    width: 190px;
+    max-height: 320px;  /*1rem = 16px , px로 통일함*/
+    overflow: auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  .autocomplete-tc {
+    list-style: none;
+    padding: 0;
+    margin-left: 55px;
+    width: 176px;
+    max-height: 320px;  /*1rem = 16px , px로 통일함*/
+    overflow: auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  .nation-input {
+    width: 200px;
+    height: 32px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: -8px;
+    outline: none;
+  }
+  .team-input {
+    width: 186px;
+    height: 32px;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: -8px;
+    outline: none;
+  }
+  .search-inputs {
+    position: relative;
+    z-index: 2;
+    margin-top: -2px;
+  }
+  /*
+  .filter-options {
+    position: relative;
+    z-index: 1;
+    background-color: green;
+  }
+  .search-inputs {
+    position: relative;
+    z-index: 2;
+    margin-top: -2px;
+  }
+  */

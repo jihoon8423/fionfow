@@ -1,0 +1,156 @@
+.trade-grade-black{
+    position: absolute;
+    font-size: 15px;
+    z-index: 3;
+    line-height: 18px;
+    width: 40px;
+    height: 20px;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    font-family: "EASANS";
+    cursor: default;
+    color: #C5C8C9 !important;
+    background: #51545A !important;
+    background: linear-gradient(140deg, #51545A 0%, #51545A 0%, #42464D 100%) !important;
+    border: 1.5px solid #393A3C !important;
+    border-top-color: #62676D !important;
+    border-left-color: #62676D !important;
+    border-right-color: #393A3C !important;
+    }
+    .trade-grade-silver{
+    position: absolute;
+    font-size: 15px;
+    z-index: 3;
+    line-height: 18px;
+    width: 40px;
+    height: 20px;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    font-family: "EASANS";
+    cursor: default;
+    color: #4E545E !important;
+    background: #020024 !important;
+    background: linear-gradient(140deg, rgb(2, 0, 36) 0%, rgb(216, 217, 220) 0%, rgb(184, 189, 202) 100%) !important;
+    border: 1.5px solid #A5A8AE !important;
+    border-top-color: #D8DADC !important;
+    border-left-color: #D8DADC !important;
+    border-right-color: #A9AAAE !important;
+    }
+    .trade-grade-bronze{
+    position: absolute;
+    font-size: 15px;
+    z-index: 3;
+    line-height: 18px;
+    width: 40px;
+    height: 20px;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    font-family: "EASANS";
+    cursor: default;
+    color: #7E3F27 !important;
+    background: #DE946B !important;
+    background: linear-gradient(140deg, #DE946B 0%, #DE946B 0%, #AD5F42 100%) !important;
+    border: 1.5px solid #864229 !important;
+    border-top-color: #E4B7A2 !important;
+    border-left-color: #E4B7A2 !important;
+    border-right-color: #864229 !important;
+    }
+    .trade-grade-gold{
+    position: absolute;
+    font-size: 15px;
+    z-index: 3;
+    line-height: 18px;
+    width: 40px;
+    height: 20px;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    font-family: "EASANS";
+    cursor: default;
+    color: #695100 !important;
+    background: #F9DD62 !important;
+    background: linear-gradient(140deg, #F9DD62 0%, #F9DD62 0%, #DCA908 100%) !important;
+    border: 1.5px solid #CDA000 !important;
+    border-top-color: #E9D36C !important;
+    border-left-color: #E9D36C !important;
+    border-right-color: #CDA000 !important;
+    }
+
+.trade-box{
+    top: 150px;
+    background: #EDEFF8;
+    box-shadow: inset 0 8px 22px rgba(0,0,0,.1);
+}
+
+.trade-date{
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+}
+/* 선택되지 않은 버튼 스타일 */
+.trade-type button {
+    background-color: #f0f0f0; /* 연한 회색 배경색 */
+  }
+  
+  /* 선택된 버튼 스타일 */
+  .trade-type button.selected {
+    background-color: #555555; /* 진한 회색 배경색 */
+    color: #ffffff; /* 흰색 텍스트 색상 */
+  }
+.header {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+.trade-tabs {
+    font-size: 20px;
+}
+.nickname-bar {
+    width: 230px;
+    margin-right: -5px;
+    margin-top: 10px;
+}
+.trade-page-container {
+    height: 1000px;
+    background-color: rgb(55, 177, 55);
+    display: flex;
+    position: relative;
+}
+.trade-s-container {
+    flex: 1;
+}
+.trade-r-container {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    margin-right: 350px;
+}
+.trade-result-header {
+    margin-bottom: 10px;
+    z-index: 1;
+    position: sticky;
+    font-size: 25px;
+    font-weight: bold;
+}
+.trade-result {
+    flex: 1;
+    overflow-y: auto;
+    width: 500px;
+}
+.trade-box {
+    border-radius: 10px;
+    width: 100px;
+    background: #8ee9b2;
+}

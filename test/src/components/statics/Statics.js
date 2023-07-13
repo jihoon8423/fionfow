@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CountryDropdown from "./CountryDropdown.js";
 import PositionButton from "./PositionButton.js";
 import data from "../../data/data.json";
+import rankerdata from "../../data/rankerdata.json";
 import "./Statics.css";
 import Table from 'react-bootstrap/Table';
 import { useDispatch } from 'react-redux';
@@ -9,48 +10,88 @@ import { useNavigate } from 'react-router-dom';
 import { selectPlayer } from "../action/Action.js";
 
 const Statics = () => {
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [selectedPosition, setSelectedPosition] = useState("");
+  const [selectedTeam, setSelectedTeam] = useState("All");
+  const [selectedPosition, setSelectedPosition] = useState("All");
 
-  const onCountryChange = (eventKey) => {
-    setSelectedCountry(eventKey === "All" ? "" : eventKey);
+  const onSelect = (team) => {
+    setSelectedTeam(team);
   };
-  
+
+  const handleTeamChange = (team) => {
+    setSelectedTeam(team);
+  };
+
+  const handlePositionClick = (position) => {
+    setSelectedPosition(position);
+  };
+
+  const calculateTier = (rank, pickRate) => {
+    const totalRank = Math.min(16, rank);
+    if (pickRate === 1 && totalRank < 16) {
+      // 다른 로직 적용
+      return totalRank;
+    } else {
+      // 현재 로직 적용
+      const tierCount = Math.ceil(totalRank / 4);
+      const remainingCount = totalRank % 4;
+      if (pickRate === 1 && rank <= totalRank) {
+        return tierCount;
+      } else {
+        const tier = tierCount - Math.ceil(remainingCount / 4) + 1;
+        return tier > 0 ? tier : 1;
+      }
+    }
+  };
+
+  const filteredPlayers = rankerdata
+  .map((ranker) => {
+    const player = data.find((p) => p.id === ranker.id);
+    return {
+      id: ranker.id,
+      name: player.name,
+      position: ranker.position,
+      mugshot: player.mugshot,
+      smallclass: player.smallclass,
+      pay: player.pay,
+      ovr: player.ovr,
+      pickRate: ranker.count,
+      team: ranker.team, // 플레이어의 팀 정보 추가
+    };
+  })
+  .filter((player, index, self) => {
+    if (selectedTeam !== "All" && player.team !== selectedTeam) {
+      return false;
+    }
+    if (selectedPosition !== "All" && player.position !== selectedPosition) {
+      return false;
+    }
+    // 중복 항목 제거
+    return index === self.findIndex((p) => p.id === player.id);
+  })
+  .sort((a, b) => b.pickRate - a.pickRate)
+  .map((player, index) => ({
+    ...player,
+    rank: index + 1,
+    tier: calculateTier(index + 1),
+  }))
+  .slice(0, 16);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const handleSelectPlayer = (id, name) => {
     dispatch(selectPlayer(id));
     navigate(`/players/${id}/${name}`);
-  }
-  
-  const handlePositionClick = (position) => {
-    setSelectedPosition(position === "All" ? '' : position);
   };
-
-  // data.json에서 국가 목록 가져오기
-  const countryList = [...new Set(data.map((player) => player.nation))];
-
-
-  const filteredPlayers = data.filter((player) => {
-    if (selectedCountry !== "" && player.nation !== selectedCountry) {
-      return false;
-    }
-    if (selectedPosition !== "" && player.position !== selectedPosition) {
-      return false;
-    }
-    return true;
-  }).slice(0,16);
+  const sortedPlayers = filteredPlayers
+  .sort((a, b) => b.pickRate - a.pickRate)
+  .slice(0, 16);
 
   // console.log(filteredPlayers);
-
-
   return (
     <div className="Statics">
       <div className="content-container">
         <nav className="nation-click">
-        <CountryDropdown onSelect={onCountryChange}>
-        </CountryDropdown>
+        <CountryDropdown onSelect={handleTeamChange}/>
         </nav>
         <nav className="position-click-bar">
           <PositionButton position="All" onClick={() => handlePositionClick("All")} />
@@ -63,7 +104,7 @@ const Statics = () => {
       <div className="body-container">
         <main>
           <div>
-            <Table striped="columns">
+            <Table striped>
             <colgroup>
                 <col style={{ width: "15%" }} />
                 <col style={{ width: "35%" }} />
@@ -83,18 +124,18 @@ const Statics = () => {
                 </tr>
               </thead>
                 <tbody>
-                    {filteredPlayers.map((player, index) => (
-                        <tr key={player.id} className="static-player-tr">
-                        <td>{index + 1}</td>
+                {sortedPlayers.map((player, index) => (
+                  <tr key={player.id} className="static-player-tr">
+                    <td>{player.rank}</td>
                         <td className="player-name" onClick={() => handleSelectPlayer(player.id,player.name)}>
-                          <span className={`position-${player.position}`}>{player.sub_position}</span>
-                          <img className="statics-mugshot" src={player.mugshot}></img>
-                          <img className="statics-img" src={player.smallclass} />
+                          <span className={`position-${player.position}`}>{player.position}</span>
+                          <img className="statics-mugshot" src={player.mugshot} alt="" />
+                          <img className="statics-img" src={player.smallclass} alt="" />
                           {player.name}
                         </td>
                         <td className="statics-player-pay">{player.pay}</td>
                         <td>{player.ovr}</td>
-                        <td></td>
+                        <td>{player.tier}</td>
                         <td>{player.pickRate}%</td>
                         </tr>
                     ))}
