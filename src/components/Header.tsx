@@ -28,9 +28,6 @@ const Header:React.FC<Props> = (props) => {
               <li>
                 <Link to="/trade">유저 거래</Link>
                 </li>
-                <li>
-                  <Link to="/page/1">게시판</Link>
-                </li>
               <Navigation />
               <main>{props.children}</main>
             </ul>

@@ -76,9 +76,9 @@ const changeRecommend = () => {
 
     if (isLoading && recommends) {
         media = (
-            <div>
+            <div style={{display: "flex", marginLeft: "0px", marginTop:"243px"}}>
                 {recommends.recommended? heartImage(Heart) : heartImage(EmptyHeart)}
-                <h4>좋아요 숫자 {recommends.recommendNum}</h4>
+                <h4 style={{marginLeft:"10px"}}>좋아요 숫자 {recommends.recommendNum}</h4>
             </div>
         )
     }

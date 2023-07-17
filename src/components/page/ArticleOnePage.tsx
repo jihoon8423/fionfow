@@ -18,12 +18,16 @@ const ArticleOnePage = () => {
     let { articleId } = useParams();
     return(
         <Fragment>
-            <ArticleContextProvider>
-                <ArticleOne item = {articleId}/>
-            </ArticleContextProvider>
-            <RecommendContextProvider>
-                <Recommend item = {articleId}/>
-            </RecommendContextProvider>
+            <div style={{width:'80%', height: '200px'}}>
+                <ArticleContextProvider>
+                    <ArticleOne item = {articleId}/>
+                </ArticleContextProvider>
+            </div>
+            <div>
+                <RecommendContextProvider >
+                    <Recommend item = {articleId}/>
+                </RecommendContextProvider>
+            </div>
             <CommentContextProvider>
                 <Comment item= {articleId}/>
             </CommentContextProvider>

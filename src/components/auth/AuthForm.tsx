@@ -26,7 +26,6 @@ const submitHandler = async (event: React.FormEvent) => {
     }
     } catch (error) {
     setIsLoading(false);
-    // Handle error state or display error message
     }
 }
 

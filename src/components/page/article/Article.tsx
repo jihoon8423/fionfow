@@ -10,7 +10,6 @@ type ArticleInfo = {
     createdAt: string,
     updatedAt?: string,
     written?: boolean,
-    // playerId: string
 };
 
 /**
@@ -39,27 +38,30 @@ const Article:React.FC<Props> = (props) => {
         }
     }
 
-    return(
+    return (
         <div>
             <header>
-                <h4>{props.item!.articleTitle}</h4>
-                <div>
-                    <span>이름: {props.item!.memberNickname}</span><br />
-                    <span>날짜: {props.item!.updatedAt}</span>
+                <h4 style={{ backgroundColor: '#f0f0f0', padding: '10px' }}>Title: {props.item!.articleTitle}</h4>
+                <div style={{ marginTop: '10px', fontWeight: 'bold' }}>
+                    <span style={{ marginRight: '10px' }}>Name: {props.item!.memberNickname}</span><br />
+                    <span>Date: {props.item!.updatedAt}</span>
                 </div>
             </header>
-            <div>
+            <div style={{ marginTop: '30px', border: '1px solid #ccc', padding: '100px' }}>
                 <div>{props.item!.articleBody}</div>
             </div>
-            <button onClick={backHandler}>뒤로</button>
-            {props.item!.written &&
-            <div>
-                <button onClick={updateHandler}>수정</button><br />
-                <button onClick={deleteHandler}>삭제</button>
+            <div style={{ display: 'flex', marginTop: '2%' }}>
+                <button onClick={backHandler}>이전</button>
+                {props.item!.written && (
+                    <div style={{ display: 'flex', marginLeft: '2px' }}>
+                        <button onClick={updateHandler}>수정</button>
+                        <button onClick={deleteHandler}>삭제</button>
+                    </div>
+                )}
             </div>
-            }
         </div>
     );
+    
 }
 
 export default Article;

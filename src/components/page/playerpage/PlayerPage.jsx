@@ -182,7 +182,6 @@ const pageId = "1";
             <li className='page-position-default'>
               총능력치
             </li>
-
           </div>
           <DetailInfo selectedLevel={selectedLevel} selectedAbility={selectedAbility}/>
             </div>

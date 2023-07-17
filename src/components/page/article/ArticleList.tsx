@@ -30,7 +30,6 @@ const ArticleList:React.FC<Props> = (props) => {
     // 아래가 이전의 코드 useParams로 받는 값이 존재하지 않는 경우 1을 default 값으로 진행
     // const pageId = String(props.item);
     const { item: pageId = "1" } = props;
-
     
     const columns = [{
         dataField: 'articleId',

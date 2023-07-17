@@ -116,13 +116,21 @@ const CommentList:React.FC<Props> = (props) => {
             {media}
             {isLogin &&
             <form onSubmit={createComment}>
-                <label htmlFor="iputName">{authCtx.userObj.nickname}</label>
+                <div>
+
+                <label htmlFor="iputName" style={{fontWeight: 'bold'}}>닉네임: {authCtx.userObj.nickname}</label>
+                </div>
+
                 <textarea
                 name="comment"
                 cols={100}
                 rows={3}
                 ref = {commentRef}/>
+                <div>
+
                 <input type="submit"/>
+                </div>
+
                 </form>}
         </div>
     );

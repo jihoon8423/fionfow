@@ -13,7 +13,6 @@ const SearchBar = ({ data, setSearchResult }) => {
     setSearchTerm(event.target.value);
     setSelectedIndex(-1);
     setShowAutocomplete(true);
-
     setSearchCompleted(false);
     };
     
