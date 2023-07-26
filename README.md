@@ -39,14 +39,7 @@ This project aims to enhance the gaming experience of FIFA Online 4 enthusiasts 
       <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=Node.js&logoColor=white"/>
 
 
-<h2>화면 구성</h2>
-| 메인페이지 | 선수세부정보 | 선수티어 | 유저거래 | 로그인 및 게시판 |
-|:----------------------------------------------:|:----------------------------------------------------:|:------------------------------------:|:----------------------------------------:|:----------------------------------------:|
-| <img src="https://user-images.githubusercontent.com/131742208/236715131-943a72e6-bb16-4d93-b773-e54748be02ea.png"/> 
-| <img src="https://user-images.githubusercontent.com/131742208/236714509-277f8a15-5e70-49bd-a9a9-d9eb4ec7a530.png"/> 
-| <img src="https://user-images.githubusercontent.com/131742208/236713825-46ad0903-d3db-4162-b0cd-6b8b5096b572.png" />
-| <img src="https://user-images.githubusercontent.com/131742208/236715680-947f9864-2af7-4aa7-8f3b-0e72f62256d6.png"/> 
-| <img src="https://user-images.githubusercontent.com/131742208/236715680-947f9864-2af7-4aa7-8f3b-0e72f62256d6.png"/> |
+
 
       
 
